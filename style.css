@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    border: 1px solid #1875E8;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: cover;
+    position: relative;
+}
+
+.container__conteudo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 40px;
+}
+
+.container__informacoes {
+    flex: 1;
+    padding: 20px;
+}
+
+.container__texto {
+    margin-bottom: 20px;
+}
+
+.container__input {
+    width: 100%;
+    height: 40px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.container__botoes {
+    display: flex;
+    gap: 16px;
+}
+
+.container__botao {
+    border-radius: 16px;
+    background: #1875E8;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.container__botao:disabled {
+    background: #CCC;
+    cursor: not-allowed;
+}
+
+.container__imagem-pessoa {
+    max-width: 100%;
+    height: auto;
+}
+
+.container__presente {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    animation: explode 1s ease-out;
+    display: none;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 90%;
+    }
+
+    .container__conteudo {
+        flex-direction: column;
+        bottom: 0;
+    }
+
+    .container__texto {
+        font-size: 24px;
+    }
+
+    .container__conteudo {
+        gap: 1rem;
+    }
+
+    .container__informacoes {
+        padding: 1rem
+    }
+}
